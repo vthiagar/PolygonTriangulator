@@ -1,0 +1,28 @@
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj
+
+# Build folders
+x64/
+Debug/
+Release/
+bin/
+
+# Intermediate files
+*.obj
+*.o
+*.pdb
+*.idb
+*.ipch
+*.tlog
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+Thumbs.db
+.DS_Store
