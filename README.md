@@ -34,6 +34,13 @@ PolygonTriangulator/
 
 ---
 
+## Example Output
+
+Here is an example triangulation for a complex concave polygon (64 triangles):
+
+![Triangulation Example](PolygonTriangulator/images/complex_triangulation.png)
+
+
 ## Build Instructions
 
 ### **Linux / Ubuntu 22.04+**
