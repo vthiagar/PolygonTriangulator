@@ -1,6 +1,9 @@
 # PolygonTriangulator
 
 A clean C++14 implementation of ear-clipping triangulation for simple (including concave) polygons.  
+
+**Note:** This project has not been tested on Linux yet.
+
 The program:
 
 - Loads polygon vertices from a CSV file.
@@ -71,7 +74,8 @@ bin/PolygonTriangulator
 Run:
 
 ```bash
-./bin/PolygonTriangulator
+cd bin
+PolygonTriangulator
 ```
 
 ---
@@ -92,6 +96,13 @@ Run:
 x64/Debug/PolygonTriangulator.exe
 x64/Release/PolygonTriangulator.exe
 ```
+
+4. Additionally, this project is configured to copy the executable into:
+```
+PolygonTriangulator/bin/PolygonTriangulator.exe
+```
+This bin/ path is intentionally defined in the project file and will always be created on every build.
+You may run the program from either location.
 
 ---
 
