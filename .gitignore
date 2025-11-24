@@ -1,28 +1,54 @@
-# Visual Studio
+# --- Visual Studio ---
 .vs/
-*.vcxproj.user
-*.vcxproj.filters
-*.vcxproj
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Build folders
+# Build directories
 x64/
 Debug/
 Release/
 bin/
+obj/
 
-# Intermediate files
+# Intellisense / PCH
+*.VC.db
+*.VC.opendb
+*.ipch
+
+# Compiled object files
 *.obj
 *.o
-*.pdb
-*.idb
-*.ipch
-*.tlog
-*.db
+*.lo
+*.la
+*.slo
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# DLL / Executables
+*.dll
+*.exe
+*.out
+*.app
+
+# Logs
+*.log
 
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
 
-# OS files
-Thumbs.db
+# Generated output
+triangles.csv
+
+# MacOS
 .DS_Store
+
+# Windows junk
+Thumbs.db
