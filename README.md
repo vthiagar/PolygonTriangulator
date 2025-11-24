@@ -38,7 +38,7 @@ PolygonTriangulator/
 
 Here is an example triangulation for a complex concave polygon (64 triangles):
 
-![Triangulation Example](Images/concave_poly_64.png)
+![Triangulation Example](./Images/concave_poly_64.png)
 
 
 ## Build Instructions
