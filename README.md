@@ -27,6 +27,7 @@ PolygonTriangulator/
     ├── Geometry.h                   # Header-only geometric utilities
     ├── Tests.cpp                    # Minimal built-in unit tests
     ├── visualize_triangulation.py   # Optional Python visualization
+    ├── Images/                      # Example output images
     └── Input/
         ├── simple_concave_poly.csv
         └── concave_poly.csv
@@ -40,6 +41,7 @@ Here is an example triangulation for a complex concave polygon (64 triangles):
 
 ![Triangulation Example](https://raw.githubusercontent.com/vthiagar/PolygonTriangulator/main/PolygonTriangulator/Images/concave_poly_64.png)
 
+---
 
 ## Build Instructions
 
@@ -53,7 +55,7 @@ sudo apt install g++ make python3 python3-pip
 pip3 install matplotlib
 ```
 
-Build using:
+Build:
 
 ```bash
 cd PolygonTriangulator
@@ -78,17 +80,19 @@ Run:
 
 1. Open:
 
+   ```
    PolygonTriangulator.sln
+   ```
 
 2. Build using Visual Studio 2022 or later.
 
 3. After building, the executable will appear in:
 
-      x64/Debug/PolygonTriangulator.exe  
-      x64/Release/PolygonTriangulator.exe
+```
+x64/Debug/PolygonTriangulator.exe
+x64/Release/PolygonTriangulator.exe
+```
 
-   (Visual Studio may additionally create a copy under PolygonTriangulator/bin/,
-    but the official output locations are the x64 build folders.)
 ---
 
 ## Usage
@@ -105,7 +109,7 @@ Run:
 ./PolygonTriangulator PolygonTriangulator/Input/simple_concave_poly.csv
 ```
 
-### **Run with visualization (requires matplotlib)**
+### **Run with visualization (requires Python + matplotlib)**
 
 ```bash
 ./PolygonTriangulator PolygonTriangulator/Input/simple_concave_poly.csv plot
@@ -114,11 +118,56 @@ Run:
 This will:
 
 1. Generate `triangles.csv`
-2. Automatically run:  
-   `python3 visualize_triangulation.py <input> triangles.csv`
+2. Automatically run:
+
+   ```bash
+   python3 visualize_triangulation.py <input> triangles.csv
+   ```
+
 3. Launch a Matplotlib window showing:
    - Polygon outline (red)
-   - Triangulation (blue)
-   - Filled triangles (blue transparent)
+   - Triangulation edges (blue)
+   - Filled triangles (transparent blue)
 
 ---
+
+## Running Unit Tests
+
+Run:
+
+```bash
+./PolygonTriangulator --test
+```
+
+This executes internal validation (triangle area consistency, convex/concave vertex identification, ear clipping checks).
+
+---
+
+## Command Line Help
+
+```bash
+./PolygonTriangulator --help
+```
+
+Displays:
+
+```
+Usage:
+  PolygonTriangulator [input_csv] [plot]
+  PolygonTriangulator --test
+
+Options:
+  input_csv   Path to a CSV file containing polygon vertices (x,y pairs).
+              If omitted, a default sample file will be used.
+
+  plot        Optional. If provided as the second argument,
+              the program invokes Python visualization.
+
+  --test      Runs internal unit tests and exits.
+```
+
+---
+
+## License
+
+MIT License. Free to use, modify, and integrate into other geometry / simulation workflows.
